@@ -53,9 +53,14 @@ $schedules = get_schedules();
 	$i = 0;
 	foreach($schedules as $day => $the_schedules):
 		echo '<input type="radio" id="tab'.$i.'" name="tab"';
-		if($i == 0){
-			echo '  checked="checked"';
+		setlocale(LC_TIME, "de_DE.utf8");
+		$wochentag = strftime("%A");
+		if ($days[$day] == $wochentag) {
+		echo 'checked="checked"';
 		}
+		else {
+		echo "";
+		};
 		echo '>'."\n";
 		echo '<label class="tabButton" for="tab'.$i.'">'.$days[$day].'</label>'."\n";
 		echo '<div class="tab">'."\n";
