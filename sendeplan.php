@@ -46,9 +46,7 @@ function get_schedules() {
 
 $schedules = get_schedules();
 ?>
-
 <div class="tabs">
-	
 	<?php
 	$i = 0;
 	foreach($schedules as $day => $the_schedules):
@@ -64,7 +62,6 @@ $schedules = get_schedules();
 		echo '>'."\n";
 		echo '<label class="tabButton" for="tab'.$i.'">'.$days[$day].'</label>'."\n";
 		echo '<div class="tab">'."\n";
-		
 		foreach($the_schedules as $schedule) {
 			echo "\t".'<p>Von ';
 			if(intval($schedule['start']) < 10){
@@ -82,7 +79,6 @@ $schedules = get_schedules();
 		}
 
 		echo '</div>'."\n";
-		
 		$i++;
 	endforeach;  
 	?>
